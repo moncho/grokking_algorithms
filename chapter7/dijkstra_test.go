@@ -34,11 +34,11 @@ func TestDijkstra(t *testing.T) {
 	}
 }
 
-func TestAgainDijkstra(t *testing.T) {
+func TestDijkstraAgain(t *testing.T) {
 	solution, path := Dijkstra(anotherGraph)
 
 	if solution != 35 {
-		t.Errorf("Dijkstra solution to graph is %d, expected %d", solution, 6)
+		t.Errorf("Dijkstra solution to graph is %d, expected %d", solution, 35)
 	}
 	if path[EndNode] != "Drums" {
 		t.Errorf("Parent of End is not Drums")
