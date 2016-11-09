@@ -30,3 +30,10 @@ func BenchmarkDijkstra(b *testing.B) {
 		Dijkstra(anotherGraph)
 	}
 }
+
+//BenchmarkDijkstra2 benchmarks Dijkstra2 algorithm.
+func BenchmarkDijkstra2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		dijkstra(anotherGraph, StartNode)
+	}
+}

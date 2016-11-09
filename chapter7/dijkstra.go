@@ -17,6 +17,7 @@ const (
 	StartNode = "start"
 	//EndNode must be the end node of the graph
 	EndNode = "fin"
+	max     = math.MaxInt32
 )
 
 //Dijkstra calculates the shortest path for a weighted graph.
@@ -52,13 +53,13 @@ func createCostsParents(graph WeightedGraph) (cost, parents) {
 		costs[node] = cost
 		parentNodes[node] = StartNode
 	}
-	costs[EndNode] = math.MaxInt32
+	costs[EndNode] = max
 	return costs, parentNodes
 }
 
 func findLowestCostNode(cost cost, processedNodes nodeSet) Node {
 	var lowestCostNode Node
-	lowestCost := math.MaxInt32
+	lowestCost := max
 	for node, cost := range cost {
 		if cost < lowestCost && !processed(processedNodes, node) {
 			lowestCost = cost
